@@ -120,6 +120,7 @@ class ModelmlFragment : Fragment() {
     }
 
     private fun uploadImage() {
+        val filePath = getFile?.absolutePath
         if (getFile != null) {
             val file = reduceFileImage(getFile as File)
 
@@ -150,6 +151,7 @@ class ModelmlFragment : Fragment() {
                         val intent = Intent(requireContext(), HasilModelMl::class.java)
                         intent.putExtra("predictedClass", predictedClass)
                         intent.putExtra("confidence", confidence)
+                        intent.putExtra("filePath", filePath)
                         startActivity(intent)
 
                     } else {
