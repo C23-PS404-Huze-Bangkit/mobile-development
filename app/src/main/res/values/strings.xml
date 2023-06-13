@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Huze</string>
+    <string name="todo">TODO</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="invalid_email">Invalid email address</string>
+    <string name="password">Password</string>
+    <string name="invalid_password">Password must be at least 8 characters</string>
+    <string name="login_button">Log In</string>
+    <string name="register_dialog">Don\'t have an account yet?</string>
+    <string name="register_text_button">Register here!</string>
+    <string name="login_failed">Login failed</string>
+    <string name="logout">Logout</string>
+    <string name="username">Username</string>
+    <string name="register_title">Create Your Account</string>
+    <string name="name">Name</string>
+    <string name="name_hint">Your Name</string>
+    <string name="register_button">Register</string>
+    <string name="login_dialog">Already have an account?</string>
+    <string name="login_text_button">Login here!</string>
+    <string name="register_failed">Register failed</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="upload">Upload</string>
+    <string name="thumbnail">Uploaded Image</string>
+    <string name="error_no_image">Please select your image first</string>
+    <string name="loading">Wait a moment…</string>
+    <string name="setting">Setting</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_profile">Profile</string>
+    <string name="aboutus">About Us</string>
+    <string name="termncond"><![CDATA[Terms & Conditions]]></string>
+    <string name="pripol">Privacy Policy</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_modelml">Model</string>
+    <string name="title_marketplace">Marketplace</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="ras_anjing">Ras Anjing</string>
+    <string name="ras_kucing">Ras Kucing</string>
+    <string name="Artikel">Artikel</string>
+</resources>
