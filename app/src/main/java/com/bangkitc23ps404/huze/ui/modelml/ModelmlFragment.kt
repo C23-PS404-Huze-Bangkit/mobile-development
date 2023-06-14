@@ -18,8 +18,10 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.bangkitc23ps404.huze.R
 import com.bangkitc23ps404.huze.data.model.FileUploadResponse
+import com.bangkitc23ps404.huze.data.model.TokenManager
 import com.bangkitc23ps404.huze.data.network.ApiConfigML
 import com.bangkitc23ps404.huze.databinding.FragmentModelmlBinding
+import com.bangkitc23ps404.huze.ui.profile.ProfileViewModel
 import com.bangkitc23ps404.huze.utils.Utils.reduceFileImage
 import com.bangkitc23ps404.huze.utils.Utils.uriToFile
 import com.bangkitc23ps404.huze.utils.Utils.createTempFile
@@ -38,6 +40,8 @@ class ModelmlFragment : Fragment() {
     private var getFile: File? = null
     val ras_kucing = listOf("American Shorthair", "Bengal", "British Shorthair", "Maine Coon", "Persian", "Ragdoll", "Russian Blue", "Scottish fold", "Siamese", "Sphynx")
     val ras_anjing = listOf("Basset hound", "Beagle", "Boxer", "Chihuahua", "English cocker spaniel", "Japanese chin", "Newfoundland", "Pomeranian", "Pug", "Samoyed")
+
+    private lateinit var profileViewModel: ProfileViewModel
 
     companion object {
         private const val CAMERA_PERMISSION_REQUEST_CODE = 100
@@ -160,6 +164,10 @@ class ModelmlFragment : Fragment() {
                             }
                             else{
                                 if (predictedClass in ras_kucing){
+//                                    val tokenLiveData = profileViewModel.getToken()
+//                                    tokenLiveData.observe(this) { token ->
+//                                        println("tokenku"+token)
+//                                    }
                                     val intent = Intent(requireContext(), HasilModelMl::class.java)
                                     intent.putExtra("predictedClass", predictedClass)
                                     intent.putExtra("confidence", confidence)

@@ -30,6 +30,9 @@
         android:theme="@style/Base.Theme.Huze"
         tools:targetApi="31">
         <activity
+            android:name=".ui.detail.DetailMarketPlaceActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.favorite.AddFavoriteActivity"
             android:exported="false" />
         <activity

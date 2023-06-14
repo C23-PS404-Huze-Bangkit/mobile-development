@@ -1,60 +1,91 @@
 package com.bangkitc23ps404.huze.ui.marketplace
 
+import android.content.Intent
+import android.graphics.Rect
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bangkitc23ps404.huze.R
+import com.bangkitc23ps404.huze.data.network.response.ProductsItem
+import com.bangkitc23ps404.huze.databinding.FragmentMarketPlaceBinding
+import com.bangkitc23ps404.huze.ui.detail.DetailMarketPlaceActivity
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [MarketPlaceFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MarketPlaceFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentMarketPlaceBinding
+    private lateinit var adapter: ProductAdapter
+    private val marketplaceViewModel by viewModels<MarketplaceViewModel>()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_market_place, container, false)
+    ): View {
+        binding = FragmentMarketPlaceBinding.inflate(inflater, container, false)
+        initProductRV()
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MarketPlaceFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MarketPlaceFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private fun initProductRV() {
+        binding!!.apply {
+            val layoutManager =
+                GridLayoutManager(requireContext(), 2)
+            recyclerView.layoutManager = layoutManager
+
+
+            marketplaceViewModel.productList.observe(viewLifecycleOwner) { items ->
+                val productList = ArrayList<ProductsItem>()
+                productList.addAll(items)
+                adapter = ProductAdapter(productList)
+                recyclerView.adapter = adapter
+                adapter.onItemClick(object : ProductAdapter.OnClickListener{
+                    override fun onItemClick(item: ProductsItem) {
+                        startActivity(
+                            Intent(context, DetailMarketPlaceActivity::class.java)
+                                .also {
+                                    it.putExtra(DetailMarketPlaceActivity.EXTRA_PRODUCT, item)
+                                })
+                    }
+                })
+            }
+        }
+        val spacingInPixels = resources.getDimensionPixelSize(R.dimen.grid_item_spacing)
+        binding.recyclerView.addItemDecoration(GridSpacingItemDecoration(2, spacingInPixels, true))
+    }
+    class GridSpacingItemDecoration(
+        private val spanCount: Int,
+        private val spacing: Int,
+        private val includeEdge: Boolean
+    ) : RecyclerView.ItemDecoration() {
+
+        override fun getItemOffsets(
+            outRect: Rect,
+            view: View,
+            parent: RecyclerView,
+            state: RecyclerView.State
+        ) {
+            val position = parent.getChildAdapterPosition(view)
+            val column = position % spanCount
+
+            if (includeEdge) {
+                outRect.left = spacing - column * spacing / spanCount
+                outRect.right = (column + 1) * spacing / spanCount
+                if (position < spanCount) {
+                    outRect.top = spacing
+                }
+                outRect.bottom = spacing
+            } else {
+                outRect.left = column * spacing / spanCount
+                outRect.right = spacing - (column + 1) * spacing / spanCount
+                if (position >= spanCount) {
+                    outRect.top = spacing
                 }
             }
+        }
     }
 }

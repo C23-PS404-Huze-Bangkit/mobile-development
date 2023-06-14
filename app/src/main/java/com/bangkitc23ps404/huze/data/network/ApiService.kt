@@ -6,6 +6,7 @@ import com.bangkitc23ps404.huze.data.network.response.ArtikelResponse
 import com.bangkitc23ps404.huze.data.network.response.CatsItem
 import com.bangkitc23ps404.huze.data.network.response.CatsResponse
 import com.bangkitc23ps404.huze.data.network.response.DogsResponse
+import com.bangkitc23ps404.huze.data.network.response.ProductResponse
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -39,4 +40,6 @@ interface ApiService {
     fun getArtikel(): Call<ArtikelResponse>
     @GET("cats/{id}")
     suspend fun getCatsById(@Path("id") id: String): Call<CatsItem>
+    @GET("products")
+    fun getProduct(): Call<ProductResponse>
 }

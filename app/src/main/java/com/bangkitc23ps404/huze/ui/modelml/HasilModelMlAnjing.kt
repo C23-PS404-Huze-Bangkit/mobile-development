@@ -10,6 +10,7 @@ import android.widget.TextView
 import com.bangkitc23ps404.huze.R
 import com.bangkitc23ps404.huze.data.model.AmbilSpesifikDataAnjing
 import java.io.File
+import java.text.DecimalFormat
 
 class HasilModelMlAnjing : AppCompatActivity() {
     private lateinit var predictedClassTextView: TextView
@@ -52,10 +53,12 @@ class HasilModelMlAnjing : AppCompatActivity() {
         homeButton = findViewById(R.id.button_tohome)
 
         val predictedClass = intent.getStringExtra("predictedClass")
-        val confidence = intent.getFloatExtra("confidence", 0f)
+        val confidence = intent.getFloatExtra("confidence", 2f)
+        val decimalFormat = DecimalFormat("#.##")
+        val formattedConfidence = decimalFormat.format(confidence)
         val filePath = intent.getStringExtra("filePath")
         predictedClassTextView.text = predictedClass
-        confidenceTextView.text = "Confidence: $confidence"
+        confidenceTextView.text = "Confidence: $formattedConfidence %"
 
         if (filePath != null) {
             val imageFile = File(filePath)
