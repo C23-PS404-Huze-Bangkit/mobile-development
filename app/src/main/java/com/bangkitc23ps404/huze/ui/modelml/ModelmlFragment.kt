@@ -36,6 +36,8 @@ class ModelmlFragment : Fragment() {
     private lateinit var binding: FragmentModelmlBinding
     private lateinit var currentPhotoPath: String
     private var getFile: File? = null
+    val ras_kucing = listOf("American Shorthair", "Bengal", "British Shorthair", "Maine Coon", "Persian", "Ragdoll", "Russian Blue", "Scottish fold", "Siamese", "Sphynx")
+    val ras_anjing = listOf("Basset hound", "Beagle", "Boxer", "Chihuahua", "English cocker spaniel", "Japanese chin", "Newfoundland", "Pomeranian", "Pug", "Samoyed")
 
     companion object {
         private const val CAMERA_PERMISSION_REQUEST_CODE = 100
@@ -143,17 +145,36 @@ class ModelmlFragment : Fragment() {
                         val fileUploadResponse = response.body()
                         val predictedClass = fileUploadResponse?.predicted_class
                         val confidence = fileUploadResponse?.confidence
-                        Toast.makeText(
-                            requireContext(),
-                            "Predicted Class: $predictedClass\nConfidence: $confidence",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        val intent = Intent(requireContext(), HasilModelMl::class.java)
-                        intent.putExtra("predictedClass", predictedClass)
-                        intent.putExtra("confidence", confidence)
-                        intent.putExtra("filePath", filePath)
-                        startActivity(intent)
-
+                        if (confidence != null) {
+                            if (confidence <= 70){
+                                Toast.makeText(
+                                    requireContext(),
+                                    "Foto tidak ditemukan dalam dataset kami",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                                Toast.makeText(
+                                    requireContext(),
+                                    "Silahkan Gunakan Gambar yang lain",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                            }
+                            else{
+                                if (predictedClass in ras_kucing){
+                                    val intent = Intent(requireContext(), HasilModelMl::class.java)
+                                    intent.putExtra("predictedClass", predictedClass)
+                                    intent.putExtra("confidence", confidence)
+                                    intent.putExtra("filePath", filePath)
+                                    startActivity(intent)
+                                }
+                                else{
+                                    val intent = Intent(requireContext(), HasilModelMlAnjing::class.java)
+                                    intent.putExtra("predictedClass", predictedClass)
+                                    intent.putExtra("confidence", confidence)
+                                    intent.putExtra("filePath", filePath)
+                                    startActivity(intent)
+                                }
+                            }
+                        }
                     } else {
                         Toast.makeText(
                             requireContext(),

@@ -30,6 +30,12 @@
         android:theme="@style/Base.Theme.Huze"
         tools:targetApi="31">
         <activity
+            android:name=".ui.favorite.AddFavoriteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.modelml.HasilModelMlAnjing"
+            android:exported="false" />
+        <activity
             android:name=".ui.detail.DetailActivityArtikel"
             android:exported="false" />
         <activity

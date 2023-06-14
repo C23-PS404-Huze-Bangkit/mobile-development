@@ -1,6 +1,7 @@
 package com.bangkitc23ps404.huze.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkitc23ps404.huze.R
@@ -22,10 +23,11 @@ class HomeViewAdapter1(private val listDogs: List<DogsItem>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val dogs = listDogs[position]
-
+        val breedWithLineBreaks = dogs.breed!!.replace(" ", "\n")
         holder.apply {
             binding.apply {
-                tvRas.text = dogs.breed
+                tvRas.text = breedWithLineBreaks
+                tvRas.textAlignment = View.TEXT_ALIGNMENT_CENTER
                 Glide.with(itemView.context)
                     .load(dogs.image)
                     .error(R.drawable.logoku2)
@@ -33,7 +35,6 @@ class HomeViewAdapter1(private val listDogs: List<DogsItem>) :
 
                 itemView.setOnClickListener {
                     onClickListener.onItemClick(dogs)
-
                 }
             }
         }
@@ -41,13 +42,11 @@ class HomeViewAdapter1(private val listDogs: List<DogsItem>) :
 
     override fun getItemCount(): Int = listDogs.size
 
-    fun onItemClick(onClickListener: OnClickListener)
-    {
+    fun onItemClick(onClickListener: OnClickListener) {
         this.onClickListener = onClickListener
     }
 
-    interface OnClickListener
-    {
+    interface OnClickListener {
         fun onItemClick(item: DogsItem)
     }
 }

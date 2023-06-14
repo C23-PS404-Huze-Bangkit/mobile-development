@@ -64,9 +64,9 @@ class HomeFragment : Fragment() {
                     override fun onItemClick(item: DogsItem) {
                         startActivity(
                             Intent(context, DetailActivity::class.java)
-                            .also {
-                                it.putExtra(DetailActivity.EXTRA_DOG, item)
-                            })
+                                .also {
+                                    it.putExtra(DetailActivity.EXTRA_DOG, item)
+                                })
                     }
                 })
             }
@@ -91,9 +91,9 @@ class HomeFragment : Fragment() {
                     override fun onItemClick(item: CatsItem) {
                         startActivity(
                             Intent(context, DetailActivityCats::class.java)
-                            .also {
-                                it.putExtra(DetailActivityCats.EXTRA_CAT, item)
-                            })
+                                .also {
+                                    it.putExtra(DetailActivityCats.EXTRA_CAT, item)
+                                })
                     }
                 })
             }

@@ -15,144 +15,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="173dp"
+                android:layout_height="196dp"
                 android:layout_margin="8dp">
 
                 <ImageView
                     android:id="@+id/iv_dogs"
                     android:layout_width="140dp"
-                    android:layout_height="0dp"
-                    android:layout_marginBottom="16dp"
-                    android:src="@drawable/logoku2"
-                    app:layout_constraintBottom_toTopOf="@+id/tv_dogs_breed"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_height="140dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/logoku2" />
 
                 <TextView
                     android:id="@+id/tv_dogs_breed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="35dp"
-                    android:layout_marginBottom="14dp"
+                    android:layout_below="@id/iv_dogs"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
                     android:text="@string/ras_anjing"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/iv_dogs"
-                    app:layout_constraintTop_toBottomOf="@+id/iv_dogs" />
+                    android:textStyle="bold" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            app:cardCornerRadius="8dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="6dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="deskripsi"
-                    android:textSize="16dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
-
-                <TextView
-                    android:id="@+id/tv_dogs_description"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="deskripsi"
-                    android:textSize="16dp"
-                    android:textColor="@color/black"
-                    android:justificationMode="inter_word"
-                    />
-            </LinearLayout>
-
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            app:cardCornerRadius="8dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="6dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="makanan"
-                    android:textSize="16dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
-
-                <TextView
-                    android:id="@+id/tv_dogs_food"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="makanan"
-                    android:textSize="16dp"
-                    android:textColor="@color/black"
-                    android:justificationMode="inter_word"
-                    />
-            </LinearLayout>
-
-
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            app:cardCornerRadius="8dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="6dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="perawatan"
-                    android:textSize="16dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
-
-                <TextView
-                    android:id="@+id/tv_dogs_care"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="perawatan"
-                    android:textSize="16dp"
-                    android:textColor="@color/black"
-                    android:justificationMode="inter_word"
-                    />
-            </LinearLayout>
-
-
+            </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -259,8 +146,8 @@
                     android:layout_height="wrap_content"
                     android:isIndicator="true"
                     android:numStars="5"
-                    android:scaleX="0.40"
-                    android:scaleY="0.40"
+                    android:scaleX="0.70"
+                    android:scaleY="0.70"
                     android:layout_gravity="center"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -276,13 +163,13 @@
                     android:layout_height="wrap_content"
                     android:isIndicator="true"
                     android:numStars="5"
-                    android:scaleX="0.40"
-                    android:scaleY="0.40"
+                    android:scaleX="0.70"
+                    android:scaleY="0.70"
                     android:layout_gravity="center"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="hngneeds?"
+                    android:text="kebutuhan kesehatan dan perawatan"
                     android:textSize="12dp"
                     android:textStyle="bold"
                     android:textColor="@color/black"
@@ -293,8 +180,8 @@
                     android:layout_height="wrap_content"
                     android:isIndicator="true"
                     android:numStars="5"
-                    android:scaleX="0.40"
-                    android:scaleY="0.40"
+                    android:scaleX="0.70"
+                    android:scaleY="0.70"
                     android:layout_gravity="center"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -310,8 +197,8 @@
                     android:layout_height="wrap_content"
                     android:isIndicator="true"
                     android:numStars="5"
-                    android:scaleX="0.40"
-                    android:scaleY="0.40"
+                    android:scaleX="0.70"
+                    android:scaleY="0.70"
                     android:layout_gravity="center"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -327,12 +214,117 @@
                     android:layout_height="wrap_content"
                     android:isIndicator="true"
                     android:numStars="5"
-                    android:scaleX="0.40"
-                    android:scaleY="0.40"
+                    android:scaleX="0.70"
+                    android:scaleY="0.70"
                     android:layout_gravity="center"/>
 
 
             </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="6dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Deskripsi"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_dogs_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:text="deskripsi"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="6dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Perawatan"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_dogs_care"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:text="perawatan"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="6dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Makanan"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_dogs_food"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:text="makanan"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
 
         </androidx.cardview.widget.CardView>
 

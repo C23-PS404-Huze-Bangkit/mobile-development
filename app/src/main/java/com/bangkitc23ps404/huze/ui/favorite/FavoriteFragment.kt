@@ -12,9 +12,6 @@ import com.bangkitc23ps404.huze.databinding.FragmentFavoriteBinding
 class FavoriteFragment : Fragment() {
 
     private var _binding: FragmentFavoriteBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,15 +19,14 @@ class FavoriteFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val favoriteViewModel =
-            ViewModelProvider(this).get(FavoriteViewModel::class.java)
-
         _binding = FragmentFavoriteBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        favoriteViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        val selectedClass = arguments?.getString("selectedClass")
+        if (selectedClass != null) {
+            // Lakukan sesuatu dengan data selectedClass
+            val textView: TextView = binding.textView
+            textView.text = selectedClass
         }
         return root
     }
@@ -40,3 +36,4 @@ class FavoriteFragment : Fragment() {
         _binding = null
     }
 }
+
