@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Huze" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+    </style>
+
+    <style name="Theme.Huze" parent="Base.Theme.Huze" />
+    <style name="textDefault">
+        <item name="color">@color/black</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="textBold">
+        <item name="color">@color/black</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="textExtraBold">
+        <item name="color">@color/black</item>
+        <item name="fontFamily">@font/montserrat_extra_bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="BlackButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:background">#000000</item>
+    </style>
+</resources>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFCCCCCC">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="198dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="8dp"
+        android:text="huzecorporation@gmail.com"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView5" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="171dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="64dp"
+        android:text="Huze"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_profile" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="171dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView4" />
+
+    <Button
+        android:id="@+id/btn_privacypolicy"
+        android:layout_width="409dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="12dp"
+        android:background="#000000"
+        android:text="@string/pripol"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_termncond" />
+
+    <Button
+        android:id="@+id/btn_termncond"
+        android:layout_width="409dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="12dp"
+        android:background="#000000"
+        android:text="@string/termncond"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_aboutus" />
+
+    <Button
+        android:id="@+id/btn_aboutus"
+        android:layout_width="409dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="12dp"
+        android:background="#000000"
+        android:text="@string/aboutus"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_setting" />
+
+    <Button
+        android:id="@+id/btn_setting"
+        android:layout_width="409dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="44dp"
+        android:background="#000000"
+        android:textSize="20sp"
+        android:text="@string/setting"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="409dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="44dp"
+        android:background="#000000"
+        android:textSize="20sp"
+        android:text="@string/logout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_privacypolicy" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/black"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="159dp"
+        android:layout_height="165dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/logoku2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_profile" />
+
+    <TextView
+        android:id="@+id/text_profile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="8dp"
+        android:text="My Profile"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="171dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="20dp"
+        android:text="Full Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_profile" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
